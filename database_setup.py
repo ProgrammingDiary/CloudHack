@@ -35,6 +35,9 @@ class Bill(Base):
 	date = Column(DateTime, default=datetime.datetime.utcnow())
 	user = relationship(User)
 	merchant = relationship(Merchant)
+	user_email = Column(String(80), nullable=False)
+	url = Column(String(80), nullable=False)
+	warranty = Column(Integer, nullable=False)
 
 engine = create_engine('sqlite:///database.db')
 

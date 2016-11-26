@@ -12,6 +12,16 @@
 </head>
 <body class="grey lighten-3 white-text">
 <div class="container">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
 	<div class="row">
 		<form class="col s12 offset-m3 m6 offset-l3 l6 blue darken-3 z-depth-4" action="/registeruser" method="POST" id="registrationForm">
 				<h2 class="center-align">Register User</h2>
