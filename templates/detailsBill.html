@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generate Bill</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/detailsBill.css">
+</head>
+<body>
+	<div class="container" id="bill">
+		<div class="col s12 m9 l9 offset-m2 offset-l2">
+			<div class="row">
+			<form id="billform" method="POST" action="/">
+				<div class="col s6 m6 l6" id="merchantAddress">
+					<h5>Merchant Name</h5>
+					<p>123, ABC Road, Something, Some City</p>
+				</div>
+				<div class="col s6 m6 l6" id="invoiceDetails">
+					<div class="input-field col offset-l2 s7 m7 l7">
+						<input placeholder="Date of Purchase" id="date" name="date" type="text" class="validate">
+						<label for="date">Date</label>
+					</div>
+					<div class="input-field col s7 m7 offset-l2 l7">
+						<input placeholder="Invoice Number" id="invoice" type="text" class="validate" name="invoice">
+						<label for="invoice">Invoice</label>
+					</div>
+					<div class="input-field col s7 m7 offset-l2 l7">
+						<input placeholder="Customer ID" id="cid" type="text" class="validate" name="cid">
+						<label for="cid">Customer ID</label>
+					</div>
+				</div>
+			</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s6 m6 l6" id="userAddress">
+				<div class="row">
+					<form class="col s12 m7 l7" id="billform" method="POST" action="/">
+						<div class="input-field col s12 m12 l12">
+							<input placeholder="Name of the Customer" id="name" type="text" class="validate" name="name">
+							<label for="name">Name</label>
+						</div>
+						<div class="input-field col s12 m12 l12">
+							<input placeholder="Address of the Customer" id="address" type="text" class="validate" name="address">
+							<label for="address">Address</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<form id="billform" method="POST" action="/">
+			<div class="col s10 l10 m10 offset-l1 offset-m1">
+			<table class="bordered">
+				<thread>
+					<tr>
+						<th data-field="Description">Description</th>
+						<th data-field="Amount">Amount</th>
+					</tr>
+				</thread>
+				<tbody>
+					<tr>
+
+						<td>
+							<div class="input-field col s12 m12 l12">
+								<input placeholder="Description of item purchased" id="desc" type="text" class="validate" name="desc">
+								<label for="desc">Description</label>
+							</div>
+						</td>
+						<td>
+							<div class="input-field col s12 m12 l12">
+								<input placeholder="Amount" id="amount" type="text" class="validate" name="amount">
+								<label for="amount">Amount</label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</form>
+		</div>
+		<div class="row">
+			<div class="col m6 l6 s6" style="text-align: center;">
+				<nav><a href="{{ url_for('get_pdf') }}">Get as PDF</a></nav>
+			</div>
+		</div>
+	</div>
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>
