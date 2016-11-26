@@ -1,0 +1,26 @@
+nav .brand-logo {
+	font-size: 2em;
+}
+
+#title {
+	text-align: center;
+	font-size: 4em;
+}
+
+#mainDescription {
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+#contact {
+	margin-top: 1.5em;
+}
+
+#contactDetails {
+	margin-bottom: 10em;
+}
+
+footer {
+	font-size: 1.5em;
+}
