@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register User</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/registerUser.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="green darken-3 white-text">
+<div class="container">
+	<div class="row">
+	<h1 class="center-align">Register User</h1>
+		<form class="col s12 m12 l12" action="/registeruser" method="POST" id="registrationForm">
+			<div class="row">
+				<div class="col s12 m12 l12 input-field">
+					<i class="material-icons prefix">account_circle</i>
+					<input placeholder="Full Name" id="fullName" name="fullname" type="text" class="validate">
+					<label for="fullName">Full Name</label>
+				</div>
+				<div class="col s12 m12 l12 input-field">
+					<i class="material-icons prefix">call</i>
+					<input type="text" placeholder="Mobile No." id="mobileno" name="mobileno" class="validate">
+					<label for="mobileno">Mobile Number</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m12 l12 input-field">
+					<i class="material-icons prefix">email</i>
+					<input placeholder="E-Mail ID" type="text" id="email" name="email" class="validate">
+					<label for="email">E-Mail ID</label>
+				</div>
+				<div class="col s12 m12 l12 input-field">
+					<i class="material-icons prefix">location_city</i>
+					<select id="collegeNames" name="collegeNames" class="">
+					</select>
+					<label>College Name</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m12 l12 input-field">
+					<i class="material-icons prefix">vpn_key</i>
+					<input id="password" name="password" type="password" class="validate">
+					<label>Password</label>
+				</div>
+			</div>
+		</form>
+		<button class="btn waves-effect waves-light brown darken-1" form="registrationForm" type="submit">Submit
+    		<i class="material-icons right">send</i>
+  		</button> 
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="../static/js/registerUser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>
