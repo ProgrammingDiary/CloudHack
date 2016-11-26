@@ -10,34 +10,33 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/registerUser.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="green darken-3 white-text">
+<body class="grey lighten-3 white-text">
 <div class="container">
 	<div class="row">
-	<h1 class="center-align">Register User</h1>
-		<form class="col s12 m12 l12" action="/registeruser" method="POST" id="registrationForm">
+		<form class="col s12 offset-m3 m6 offset-l3 l6 blue darken-3 z-depth-4" action="/registeruser" method="POST" id="registrationForm">
+				<h2 class="center-align">Register User</h2>
 			<div class="row">
-				<div class="col s12 m12 l12 input-field">
+				<div class="col s12 m6 l6  input-field">
 					<i class="material-icons prefix">account_circle</i>
 					<input placeholder="Full Name" id="fullName" name="fullname" type="text" class="validate">
 					<label for="fullName">Full Name</label>
 				</div>
-				<div class="col s12 m12 l12 input-field">
+				<div class="col s12 m6 l6 input-field">
 					<i class="material-icons prefix">call</i>
 					<input type="text" placeholder="Mobile No." id="mobileno" name="mobileno" class="validate">
 					<label for="mobileno">Mobile Number</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s12 m12 l12 input-field">
+				<div class="col s12 m6 l6 input-field">
 					<i class="material-icons prefix">email</i>
 					<input placeholder="E-Mail ID" type="text" id="email" name="email" class="validate">
 					<label for="email">E-Mail ID</label>
 				</div>
-				<div class="col s12 m12 l12 input-field">
+				<div class="col s12 m6 l6 input-field">
 					<i class="material-icons prefix">location_city</i>
-					<select id="collegeNames" name="collegeNames" class="">
-					</select>
-					<label>College Name</label>
+					<input type="text" placeholder="Address" id="address" name="address" class="validate">
+					<label for="address">Address</label>
 				</div>
 			</div>
 			<div class="row">
@@ -48,9 +47,14 @@
 				</div>
 			</div>
 		</form>
-		<button class="btn waves-effect waves-light brown darken-1" form="registrationForm" type="submit">Submit
+		</div>
+		<div class="row">
+		<div class="col s12 offset-m3 offset-l3 m6 l6">
+		<button class="btn waves-effect waves-light blue darken-4" form="registrationForm" type="submit">Submit
     		<i class="material-icons right">send</i>
-  		</button> 
+  		</button>
+  		</div>
+  		</div> 
 	</div>
 </div>
 

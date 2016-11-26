@@ -10,10 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/loginMerchant.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="green darken-3">
+<body class="grey lighten-3 white-text">
 <div class="container">
 	<div class="row">
-		<form class="col s12 m12 l12" id="loginForm" method="POST" action="/merchantlogin">
+		<form class="col s12 offset-m3 m6 offset-l3 l6 z-depth-4 blue darken-3" id="loginForm" method="POST" action="/merchantlogin">
 			<div class="row">
 				<div class="row center-align">
 					<h1 class="white-text">Merchant Login</h1>
@@ -30,9 +30,13 @@
 				</div>
 			</div>
 		</form>
-		<button class="btn waves-effect waves-light brown darken-1" form="loginForm" type="submit" method="POST">Submit
+		<div class="row">
+		<div class="col offset-m3 m6 offset-l3 l6 s12" style="padding-top: 1em">
+		<button class="btn waves-effect waves-light blue darken-4" form="loginForm" type="submit" method="POST">Submit
     		<i class="material-icons right">send</i>
-  		</button> 
+  		</button>
+  		</div>
+  		</div> 
 	</div>
 </div>
 <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
