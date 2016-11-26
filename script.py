@@ -37,7 +37,7 @@ def loginUser():
 	else:
 		return render_template('loginUser.html')
 
-@app.route('/loginmerchant')
+@app.route('/loginmerchant', methods=['GET', 'POST'])
 def loginMerchant():	
 	if request.method == 'POST':
 		userQuery = session.query(Merchant).filter_by(email=request.form['email'])
@@ -45,7 +45,7 @@ def loginMerchant():
 			flash("Invalid Account")
 			return redirect('/loginmerchant')
 		else:
-			currUser = userQuery.one()
+			currUser = userQuery.one()	
 			if currUser.password == request.form['password']:
 				flash("Registration Successfull")
 				return redirect('/')
