@@ -1,0 +1,36 @@
+body {
+	padding-top: 1em;
+	margin-top: 1em;
+}
+
+label {
+	color: black;
+}
+
+#bill {
+	border:1px solid black;
+}
+
+#merchantAddress {
+	padding-top: 1em;
+	padding-left: 1em;
+}
+
+#userAddress {
+	margin-top: -12em;
+}
+
+#invoiceDetails {
+	padding-top: 4em;
+}
+
+th {
+	text-align: center;
+}
+
+@media print
+{
+	nav {
+		display: none;
+	}
+}
