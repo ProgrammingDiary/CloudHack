@@ -11,3 +11,13 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+@app.route('/')
+@app.route('/home')
+def Home():
+
+@app.route('/userLogin', methods=['GET', 'POST'])
+def userLogin():
+	if request.method == 'POST':
+
+	else:
+		return render_template()
