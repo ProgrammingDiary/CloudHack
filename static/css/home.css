@@ -1,3 +1,11 @@
+.container{
+	margin-top: -2.2em;
+}
+
+p {
+	font-size: 2em;
+}
+
 nav .brand-logo {
 	font-size: 2em;
 }
