@@ -17,7 +17,6 @@
 	<table class="striped">
 		<thread>
 			<tr class="center-text">
-				<th data-field="sno">S.No</th>
 				<th data-field="bno">Bill No.</th>
 				<th data-field="item">Item</th>
 				<th data-field="dop">Date of Purchase</th>
@@ -25,13 +24,23 @@
 				<th data-field="service">Service Center</th>
 			</tr>
 		</thread>
+		<tbody>
+			{% for b in Bill %}
+				<tr>
+				<td>{{ b.id }}</td>
+				<td>{{ b.description }}</td>
+				<td>{{ b.date }}</td>
+				<td>{{ b.warranty }}</td>
+				<td><button><a href="#">Service Center</a></button></td>
+				</tr>
+			{% endfor %}
+		</tbody>
 	</table>
 	</div>
 </div>
 
-
-
-
-
-
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  	<script type="text/javascript" src="../static/js/detailsUser.js"></script>
 </body>
+</html>

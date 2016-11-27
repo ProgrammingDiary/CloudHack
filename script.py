@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_weasyprint import HTML, render_pdf
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_setup import User, Merchant, Base
+from database_setup import User, Merchant, Base, Bill
 import pdfkit
 
 app = Flask(__name__)
@@ -93,6 +93,10 @@ def registerUser():
 	else:
 		return render_template('registerUser.html')
 
+@app.route('/detailsuser')
+def detailsUser():
+	Bills = session.query(Bill).all()	
+	return render_template('detailsUser.html', Bill=Bills)
 
 if __name__ == '__main__':
 	app.debug = True
