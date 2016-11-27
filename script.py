@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_weasyprint import HTML, render_pdf
+#from flask_weasyprint import HTML, render_pdf
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import User, Merchant, Base
@@ -93,6 +93,12 @@ def registerUser():
 	else:
 		return render_template('registerUser.html')
 
+@app.route('/generatebill', methods=['GET', 'POST'])
+def generateBill():
+	if request.method == 'POST':
+		currUser = session.query(User).filter_by(email=request.form['email']).one()
+		mid = 
+		newBill = Bill(user_id=currUser.uid, ,description=request.form['description'], user_email=request.form['email'], warranty=request.form['warranty'], amount=request.form['amount'], )
 
 if __name__ == '__main__':
 	app.debug = True
