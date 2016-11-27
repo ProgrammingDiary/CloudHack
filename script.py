@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 #from flask_weasyprint import HTML, render_pdf
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_setup import User, Merchant, Base
+from database_setup import User, Merchant, Base, Bill
 import pdfkit
 
 app = Flask(__name__)
@@ -96,9 +96,27 @@ def registerUser():
 @app.route('/generatebill', methods=['GET', 'POST'])
 def generateBill():
 	if request.method == 'POST':
+		currUser = session.query(User).filter_by(email=request.form['email'])
+		pdfkit.from_url('0.0.0.0/detailsBill.html', 'out.pdf')
+		newBill = Bill(uid=currUser.id, merchant_id="TE5003", user_email=request.form['email'], description=request.form['description'],warranty=2, url='abc', amount=500)
+		session.add(newBill)
+		return redirect('/')
+	else:
+		return render_template('detailsBill.html')
+
+"""@app.route('/generatebill', methods=['GET', 'POST'])
+def generateBill():
+	if request.method == 'POST':
 		currUser = session.query(User).filter_by(email=request.form['email']).one()
-		mid = 
-		newBill = Bill(user_id=currUser.uid, ,description=request.form['description'], user_email=request.form['email'], warranty=request.form['warranty'], amount=request.form['amount'], )
+		mid = TE5004
+		pdfkit.from_url('0.0.0.0/detailsBill.html', '%s%s.pdf' % (currUser.uid, request.form['date']))
+		newBill = Bill(merchant_id=mid, user_id=currUser.uid, ,description=request.form['description'], user_email=request.form['email'], warranty=request.form['warranty'], url="asd", amount=500)
+		session.add(newBill)
+		session.commit()
+		return redirect('/')
+	else:
+		return render_template('detailsBilss.html')
+		"""
 
 if __name__ == '__main__':
 	app.debug = True

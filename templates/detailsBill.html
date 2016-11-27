@@ -14,7 +14,7 @@
 	<div class="container" id="bill">
 		<div class="col s12 m9 l9 offset-m2 offset-l2">
 			<div class="row">
-			<form id="billform" method="POST" action="/">
+			<form id="billform" method="POST" action="/generatebill">
 				<div class="col s6 m6 l6" id="merchantAddress">
 					<h5>Merchant Name</h5>
 					<p>123, ABC Road, Something, Some City</p>
@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col s6 m6 l6" id="userAddress">
 				<div class="row">
-					<form class="col s12 m7 l7" id="billform" method="POST" action="/">
+					<form class="col s12 m7 l7" id="billform" method="POST" action="/generatebill">
 						<div class="input-field col s12 m12 l12">
 							<input placeholder="Name of the Customer" id="name" type="text" class="validate" name="name">
 							<label for="name">Name</label>
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<form id="billform" method="POST" action="/">
+			<form id="billform" method="POST" action="/generatebill">
 			<div class="col s10 l10 m10 offset-l1 offset-m1">
 			<table class="bordered">
 				<thread>
@@ -85,7 +85,10 @@
 		</div>
 		<div class="row">
 			<div class="col m6 l6 s6" style="text-align: center;">
-				<nav><a href="{{ url_for('get_pdf') }}">Get as PDF</a></nav>
+				<!--<button class="btn waves-effect" form="billform" type="submit" method="POST">Get as PDF</button>-->
+				<button class="btn waves-effect waves-light" form="billform" type="submit" method="POST">Submit
+    		<i class="material-icons right">send</i>
+  		</button>
 			</div>
 		</div>
 	</div>
