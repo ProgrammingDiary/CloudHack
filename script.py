@@ -93,6 +93,11 @@ def registerUser():
 	else:
 		return render_template('registerUser.html')
 
+@app.route('/detailsuser')
+def detailsUser():
+	Bills = session.query(Bill).all()	
+	return render_template('detailsUser.html', Bill=Bills)
+
 @app.route('/generatebill', methods=['GET', 'POST'])
 def generateBill():
 	if request.method == 'POST':
@@ -117,6 +122,7 @@ def generateBill():
 	else:
 		return render_template('detailsBilss.html')
 		"""
+
 
 if __name__ == '__main__':
 	app.debug = True
