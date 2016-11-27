@@ -93,19 +93,18 @@ def registerUser():
 	else:
 		return render_template('registerUser.html')
 
-<<<<<<< HEAD
 @app.route('/detailsuser')
 def detailsUser():
 	Bills = session.query(Bill).all()	
 	return render_template('detailsUser.html', Bill=Bills)
-=======
+
 @app.route('/generatebill', methods=['GET', 'POST'])
 def generateBill():
 	if request.method == 'POST':
 		currUser = session.query(User).filter_by(email=request.form['email']).one()
 		mid = 
 		newBill = Bill(user_id=currUser.uid, ,description=request.form['description'], user_email=request.form['email'], warranty=request.form['warranty'], amount=request.form['amount'], )
->>>>>>> 0f2bb04ab04c04a762825d44211fe8924afd3c8b
+
 
 if __name__ == '__main__':
 	app.debug = True
