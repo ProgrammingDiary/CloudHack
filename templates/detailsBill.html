@@ -16,8 +16,8 @@
 			<div class="row">
 			<form id="billform" method="POST" action="/generatebill">
 				<div class="col s6 m6 l6" id="merchantAddress">
-					<h5>Merchant Name</h5>
-					<p>123, ABC Road, Something, Some City</p>
+					<h5>{{ merchant.name }}</h5>
+					<p>{{  merchant.address  }}</p>
 				</div>
 				<div class="col s6 m6 l6" id="invoiceDetails">
 					<div class="input-field col offset-l2 s7 m7 l7">
@@ -30,7 +30,7 @@
 					</div>
 					<div class="input-field col s7 m7 offset-l2 l7">
 						<input placeholder="Customer EMail" id="email" type="text" class="validate" name="email">
-						<label for="email">EMail</label>
+						<label for="email">E-Mail</label>
 					</div>
 				</div>
 			</form>

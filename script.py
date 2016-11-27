@@ -50,7 +50,7 @@ def loginMerchant():
 			currUser = userQuery.one()	
 			if currUser.password == request.form['password']:
 				flash("Registration Successfull")
-				return redirect('/')
+				return redirect(url_for('generateBill'))
 			else:
 				flash("Invalid Credentials")
 				return redirect('/loginmerchant')
@@ -102,12 +102,13 @@ def detailsUser():
 def generateBill():
 	if request.method == 'POST':
 		currUser = session.query(User).filter_by(email=request.form['email'])
-		pdfkit.from_url('0.0.0.0/detailsBill.html', 'out.pdf')
-		newBill = Bill(uid=currUser.id, merchant_id="TE5003", user_email=request.form['email'], description=request.form['description'],warranty=2, url='abc', amount=500)
+		pdfkit.from_url('0.0.0.0/generatebill', 'out.pdf')
+		newBill = Bill(uid=currUser.id, merchant_id="ME5000", user_email=request.form['email'], description=request.form['description'],warranty=request.form['warranty'], url='abc', amount=request.form['amount'])
 		session.add(newBill)
 		return redirect('/')
 	else:
-		return render_template('detailsBill.html')
+		currMer = session.query(Merchant).filter_by(mid="ME5000").one()
+		return render_template('detailsBill.html', merchant=currMer)
 
 """@app.route('/generatebill', methods=['GET', 'POST'])
 def generateBill():
